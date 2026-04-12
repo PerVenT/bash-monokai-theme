@@ -48,6 +48,11 @@ short_time() {
 	printf "$TMP_TIME"
 }
 
+common_datetime() {
+  TMP_TIME=$(date "+%F +%T")
+	printf "$TMP_TIME"
+}
+
 # center_string() {
 #   local string="$1"
 #   local padding=$(( ($COLUMNS - ${#string}) / 2 ))
