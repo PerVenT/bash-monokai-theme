@@ -16,6 +16,31 @@ virtualenv_name() {
   fi
 }
 
+# Show kubernetes context
+kubernetes_context() {
+  if command -v kubectl >/dev/null 2>&1; then
+    local k_ctx
+    k_ctx=$(kubectl config current-context 2>/dev/null)
+    if [ -n "$k_ctx" ]; then
+      local k_ns
+      k_ns=$(kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null)
+      [ -z "$k_ns" ] && k_ns="default"
+      printf "%s:%s" "$k_ctx" "$k_ns"
+    fi
+  fi
+}
+
+# Show docker context
+docker_context() {
+  if command -v docker >/dev/null 2>&1; then
+    local d_ctx
+    d_ctx=$(docker context show 2>/dev/null)
+    if [ -n "$d_ctx" ]; then
+      printf "%s" "$d_ctx"
+    fi
+  fi
+}
+
 function current_user() {
   if [ -n "$USER" ]; then
     printf "$USER"
@@ -49,7 +74,7 @@ short_time() {
 }
 
 common_datetime() {
-  TMP_TIME=$(date "+%F +%T")
+  TMP_TIME=$(date "+%F %T")
 	printf "$TMP_TIME"
 }
 
