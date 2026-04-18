@@ -2,7 +2,7 @@
 
 A collection of Monokai color scheme themes for Bash shell.
 
-[[img/5e513086cf370788664a353b66517ac08c4df40c.png]]
+![](./img/5e513086cf370788664a353b66517ac08c4df40c.png)
 
 ## Installation
 
