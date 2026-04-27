@@ -6,30 +6,29 @@ prompt_cmd() {
   local venv_name
   venv_name=$(virtualenv_name)
   if [ -n "$venv_name" ]; then
-    venv_name=" ->  $venv_name"
+    venv_name=" |  $venv_name"
   fi
 
   local git_branch
   git_branch=$(gitbranch_name)
   if [ -n "$git_branch" ]; then
-    git_branch=" ->  $git_branch"
+    git_branch=" |  $git_branch"
   fi
 
   local kube_ctx
   kube_ctx=$(kubernetes_context)
   if [ -n "$kube_ctx" ]; then
-    kube_ctx=" -> 󱃾 $kube_ctx"
+    kube_ctx=" | 󱃾 $kube_ctx"
   fi
   
   local docker_ctx
   docker_ctx=$(docker_context)
   if [ -n "$docker_ctx" ]; then
-    docker_ctx=" -> 󰡨 $docker_ctx"
+    docker_ctx=" | 󰡨 $docker_ctx"
   fi
 
   LINE_1="$(rgb_bg_ps1 $palette_primary_dark)$(no_color_ps1)"
   LINE_1+=" $(rgb_fg_ps1 $palette_secondary)$(common_datetime)"
-  LINE_1+=" $(rgb_fg_ps1 $palette_accent)~"
   LINE_1+="$(rgb_fg_ps1 $palette_accent)${venv_name}"
   LINE_1+="$(rgb_fg_ps1 $palette_variant_1)${git_branch}"
   LINE_1+="$(rgb_fg_ps1 $palette_secondary_dark)${kube_ctx}"

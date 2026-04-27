@@ -10,10 +10,10 @@ To install the theme, add one of the following lines to your `~/.bashrc`:
 
 ```bash
 # For Octagon variant
-source /path/to/bash-monokai-theme/Monokai_octagon
+source /path/to/bash-monokai-theme/Monokai_Octagon
 
 # For monochrome variant
-source /path/to/bash-monokai-theme/Monokai_monochrome
+source /path/to/bash-monokai-theme/Monokai_Monochrome
 ```
 
 Replace `/path/to/bash-monokai-theme` with the actual path to this repository.
