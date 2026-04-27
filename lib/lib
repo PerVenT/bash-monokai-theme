@@ -4,15 +4,15 @@ source $libDir'/color'
 
 gitbranch_name() {
   branch_id=$(git branch 2>/dev/null | grep '^*' | cut -c 3-)
-  if [ $branch_id ]
+  if [ -n "$branch_id" ]
   then
-    printf $branch_id
+    printf "%s" "$branch_id"
   fi
 }
 
 virtualenv_name() {
   if [ -n "$VIRTUAL_ENV" ]; then
-    printf "$(basename "$VIRTUAL_ENV")"
+    printf "%s" "$(basename "$VIRTUAL_ENV")"
   fi
 }
 
