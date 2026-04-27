@@ -31,7 +31,7 @@ prompt_cmd() {
   LINE_1+=" $(rgb_fg_ps1 $palette_secondary)$(common_datetime)"
   LINE_1+=" $(rgb_fg_ps1 $palette_accent)~"
   LINE_1+="$(rgb_fg_ps1 $palette_accent)${venv_name}"
-  LINE_1+="$(rgb_fg_ps1 $palette_variant_1k)${git_branch}"
+  LINE_1+="$(rgb_fg_ps1 $palette_variant_1)${git_branch}"
   LINE_1+="$(rgb_fg_ps1 $palette_secondary_dark)${kube_ctx}"
   LINE_1+="$(rgb_fg_ps1 $palette_secondary_dark)${docker_ctx}"
 
