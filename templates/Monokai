@@ -31,9 +31,9 @@ prompt_cmd() {
   LINE_1+=" $(rgb_fg_ps1 $palette_secondary)$(common_datetime)"
   LINE_1+=" $(rgb_fg_ps1 $palette_accent)~"
   LINE_1+="$(rgb_fg_ps1 $palette_accent)${venv_name}"
-  LINE_1+="$(rgb_fg_ps1 $palette_secondary_dark)${git_branch}"
-  LINE_1+="$(rgb_fg_ps1 $palette_accent_dark)${kube_ctx}"
-  LINE_1+="$(rgb_fg_ps1 $palette_accent_dark)${docker_ctx}"
+  LINE_1+="$(rgb_fg_ps1 $palette_variant_1k)${git_branch}"
+  LINE_1+="$(rgb_fg_ps1 $palette_secondary_dark)${kube_ctx}"
+  LINE_1+="$(rgb_fg_ps1 $palette_secondary_dark)${docker_ctx}"
 
   LINE_2="$(rgb_bg_ps1 $palette_primary_dark)$(no_color_ps1)"
   LINE_2+=" $(rgb_fg_ps1 $palette_secondary)$(current_user)@$HOSTNAME"
